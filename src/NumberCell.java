@@ -1,5 +1,5 @@
 public class NumberCell extends Cell{
-    public String numberValue;
+    private String numberValue;
 
     public NumberCell(String txt){
         this.numberValue =txt;

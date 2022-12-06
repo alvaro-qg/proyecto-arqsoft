@@ -1,8 +1,8 @@
 public class Operation implements Tree{
 
-    public Operand operand1;
-    public Operand operand2;
-    public String operator;
+    private Operand operand1;
+    private Operand operand2;
+    private String operator;
 
     public Operation(String operation,Operand op1, Operand op2){
         operator=operation;

@@ -1,7 +1,18 @@
 import java.io.*;
 import java.util.*;
 public class SpreadSheet {
-    public ArrayList<ArrayList<Cell>> arrayOfCells;
+
+    private static SpreadSheet mySpreadSheet;
+    private ArrayList<ArrayList<Cell>> arrayOfCells;
+
+
+    private SpreadSheet(){};
+    public static SpreadSheet getInstance(){
+        if(mySpreadSheet==null){
+            mySpreadSheet = new SpreadSheet();
+        }
+        return mySpreadSheet;
+    };
 
     Cell createCell(String txt) {
         if(txt.startsWith("=")){

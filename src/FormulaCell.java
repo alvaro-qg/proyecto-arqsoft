@@ -1,7 +1,8 @@
 public class FormulaCell extends Cell{
-    public String formula;
-    public Tree tree;
+    private String formula;
+    private Tree tree;
 
+    SpreadSheet mySpreadSheet= SpreadSheet.getInstance();
     public FormulaCell(String txt){
         this.formula =txt;
     }
@@ -31,18 +32,28 @@ public class FormulaCell extends Cell{
             return op3;
         }
 
-        else if(formula.equals("=3*2")){
-            Operand op1=new Operand("3");
+        else if(formula.equals("=A1+1")){
+            Operand op1=new Operand(mySpreadSheet.SearchCell("1A").GetCellValue());
             Operand op2=new Operand("2");
             Tree op3=new Operation("*",op1,op2);
             return op3;
         }
 
-        else if(formula.equals("=6/2")){
-            Operand op1=new Operand("6");
+        else if(formula.equals("=3+2")){
+            Operand op1=new Operand("3");
             Operand op2=new Operand("2");
-            Tree op3=new Operation("/",op1,op2);
+            Tree op3=new Operation("+",op1,op2);
             return op3;
+        }
+
+        else if(formula.equals("=3+2+3")){
+            Operand op1=new Operand("3");
+            Operand op2=new Operand("2");
+            Operand op3=new Operand("3");
+            Tree op=new Operation("+",op1,op2);
+            Operand op4 = new Operand(String.valueOf(op.CalculateFormula()));
+            Tree op5= new Operation("+",op3,op4);
+            return op5;
         }
 
         else {

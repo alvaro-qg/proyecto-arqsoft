@@ -1,5 +1,5 @@
 public class Operand implements Tree{
-    public String numberValue;
+    private String numberValue;
 
     public Operand(String value){
         numberValue=value;
@@ -8,7 +8,6 @@ public class Operand implements Tree{
     public double CalculateFormula(){
             return Integer.parseInt(numberValue);
     }
-
 
 
 }

@@ -1,5 +1,5 @@
 public class TextCell extends Cell{
-    public String stringValue;
+    private String stringValue;
 
     public TextCell(String txt){
         this.stringValue =txt;
@@ -10,6 +10,6 @@ public class TextCell extends Cell{
     }
 
     public void SetCellValue(String value){
-        stringValue =value;}
+        stringValue = value;}
 
 }

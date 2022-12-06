@@ -1,5 +1,5 @@
 abstract class Cell {
-    public String coordinates;
+    private String coordinates;
 
     abstract String GetCellValue();
     abstract void SetCellValue(String value);

@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     Scanner scanner=new Scanner(System.in);
-    SpreadSheet mySpreadSheet= new SpreadSheet();
+    SpreadSheet mySpreadSheet= SpreadSheet.getInstance();
     public void menu() {
         System.out.println("Choose one of the following options:");
         System.out.println("0: Exit");
