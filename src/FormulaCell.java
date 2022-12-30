@@ -25,18 +25,21 @@ public class FormulaCell extends Cell{
             return op3;
         }
 
-        else if(formula.equals("=4-3")){
-            Operand op1=new Operand("4");
-            Operand op2=new Operand("3");
-            Tree op3=new Operation("-",op1,op2);
-            return op3;
+        else if(formula.equals("=MAX(B1C2)")){
+
+            Max m=new Max("B1","C2");
+            m.CalculateFormula();
+            Operand op = new Operand(formula);
+            op.setFunction(m);
+            return op;
         }
 
-        else if(formula.equals("=A1+1")){
-            Operand op1=new Operand(mySpreadSheet.SearchCell("1A").GetCellValue());
-            Operand op2=new Operand("2");
-            Tree op3=new Operation("*",op1,op2);
-            return op3;
+        else if(formula.equals("=MIN(B1C2)")){
+
+            Min m=new Min("B1","C2");
+            m.Recalculate();
+            Tree op = new Operand(Double.toString(m.GetMinValue()));
+            return op;
         }
 
         else if(formula.equals("=3+2")){

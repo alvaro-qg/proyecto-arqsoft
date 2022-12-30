@@ -14,6 +14,10 @@ public class SpreadSheet {
         return mySpreadSheet;
     };
 
+    public ArrayList<ArrayList<Cell>> getArrayOfCells() {
+        return arrayOfCells;
+    }
+
     Cell createCell(String txt) {
         if(txt.startsWith("=")){
             return new FormulaCell(txt.replace(',',';'));
@@ -93,7 +97,7 @@ public class SpreadSheet {
                 String[] arrSplit= data.split(";", -1);
                 for (int i=0; i<arrSplit.length; i++)
                 {
-                    String coordinates=(char)('A' + j) + Integer.toString(i+1)  ;
+                    String coordinates=(char)('A' + i) + Integer.toString(j+1)  ;
                     String value=arrSplit[i].replace(',',';');
                     Cell c=createCell(value);
                     c.SetCoordinates(coordinates);
